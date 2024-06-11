@@ -79,8 +79,7 @@ npm run dev
 - Remove Redux and Reduxjs Toolkit from the application and use built-in solutions
 
 ### 7. Use TailwindCSS to code Pixel Perfect Design
--Use Tailwind CSS to design this page
-- and apply a better design to the entire application.
+- Use Tailwind CSS to design this page and apply a better design to the entire application.
 
 ### 8. SEO and MetaData
 - Ensure the application works perfectly with SEO.
