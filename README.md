@@ -7,6 +7,8 @@ You will be working on migrating a Next.js application from the `pages` director
 `NextAuth.js` to handle authentication in a `Next.js` app.
 `i18next` to handle internationalization. 
 `NProgress` to show a progress bar at the top when a page changes.
+`redux` for state management
+`reduxjs/toolkit` for API caching and data fetching
 
 the application uses a fake API for login and registration: [DummyJSON Auth API](https://dummyjson.com/docs/auth#auth-login).
 
@@ -15,7 +17,7 @@ Your main task is to migrate the application from the `pages` dir to the new `ap
 
 Implement authentication and localization without using any third-party libraries.
 Enable i18n routing.
-Improve the current form state and validation using best practices.
+Improve the current code to follow best practices.
 
 ## Getting Started
 Follow these steps to set up the project locally:
@@ -61,16 +63,28 @@ npm run dev
 ### 1. Migrate to App Router
 - Move the application from the `pages` directory to the new `app` router in Next.js.
 
-### 2. Implement Authentication and Localization
-- Implement authentication and localization from scratch without using any third-party libraries.
+### 2. Implement Authentication
+- remove `NextAuth.js` and implement a Cookie-based session management
 
-### 3. Enable i18n Routing
+### 3. Implement Internationalization
+- remove `i18next` and implement a solution using Next.js built-in support for internationalized
+
+### 4. Enable multi-language support
 - Implement i18n routing to support multiple languages.
 
-### 4. Improve forms State and Validation
-- Review the current implementation of the forms state and validation.
-- Identify areas that can be improved using best practices.
-- Implement the improvements.
+### 5. Analyze and improve the code
+- while migrating the app if you see any features that could be implemented better or improved by following best practices just apply what you think is right
+
+### 6. Replace Redux/Reduxjs Toolkit with Built-In Solutions
+- Remove Redux and Reduxjs Toolkit from the application and use built-in solutions
+
+### 7. Use TailwindCSS to code Pixel Perfect Design
+-Use Tailwind CSS to design this page
+- and apply a better design to the entire application.
+
+### 8. SEO and MetaData
+- Ensure the application works perfectly with SEO.
+- Implement appropriate metadata for all pages to enhance SEO.
 
 ## Submission
 
