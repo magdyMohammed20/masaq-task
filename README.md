@@ -22,8 +22,8 @@ Follow these steps to set up the project locally:
 
 #### Clone the repository:
 ```base
-git clone [REPO_URL]
-cd [REPO_NAME]
+git clone https://github.com/msaaqcom/assignment-frontend-blueprint/
+cd assignment-frontend-blueprint
 ```
 
 #### Install dependencies:
