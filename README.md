@@ -1,40 +1,90 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Assignment Blueprint for backend
+===============================
+
+You will be working on migrating a Next.js application from the `pages` directory to the new `app` router.
+
+## Project features:
+`NextAuth.js` to handle authentication in a `Next.js` app.
+`i18next` to handle internationalization. 
+`NProgress` to show a progress bar at the top when a page changes.
+`redux` for state management
+`reduxjs/toolkit` for API caching and data fetching
+
+the application uses a fake API for login and registration: [DummyJSON Auth API](https://dummyjson.com/docs/auth#auth-login).
+
+## Task Requirements
+Your main task is to migrate the application from the `pages` dir to the new `app` router. While doing so, you are required to:
+
+Implement authentication and localization without using any third-party libraries.
+Enable i18n routing.
+Improve the current code to follow best practices.
 
 ## Getting Started
+Follow these steps to set up the project locally:
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+#### Clone the repository:
+```base
+git clone https://github.com/msaaqcom/assignment-frontend-blueprint/
+cd assignment-frontend-blueprint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Install dependencies:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```base
+npm install
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+#### Copy the .env.example file to .env and add the necessary values for the keys:
+```base
+cp .env.example .env
+```
+#### Start the development server:
+```base
+npm run dev
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- `contextes/`
+  - `AppContext.tsx`
+  - `AuthContext.tsx`
+  - `ToastContext.tsx`
+- `hooks/` - Custom hooks used in the application.
+- `store/` - Redux store setup.
+- `types/` - TypeScript types.
+- `utils/` - Utility helpers.
+- `pages/` - Contains app pages.
+- `public/` - Contains public eg: (locales).
+- `styles/` - Contains global styles.
+- `next-i18next.config.js` - i18next config
 
-## Learn More
+## Your Task
 
-To learn more about Next.js, take a look at the following resources:
+### 1. Migrate to App Router
+- Move the application from the `pages` directory to the new `app` router in Next.js.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 2. Implement Authentication
+- remove `NextAuth.js` and implement a Cookie-based session management
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 3. Implement Internationalization
+- remove `i18next` and implement a solution using Next.js built-in support for internationalized
 
-## Deploy on Vercel
+### 4. Enable multi-language support
+- Implement i18n routing to support multiple languages.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 5. Analyze and improve the code
+- while migrating the app if you see any features that could be implemented better or improved by following best practices just apply what you think is right
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### 6. Replace Redux/Reduxjs Toolkit with Built-In Solutions
+- Remove Redux and Reduxjs Toolkit from the application and use built-in solutions
+
+### 7. Use TailwindCSS to code Pixel Perfect Design
+- Use Tailwind CSS to design this page and apply a better design to the entire application.
+
+### 8. SEO and MetaData
+- Ensure the application works perfectly with SEO.
+- Implement appropriate metadata for all pages to enhance SEO.
+
+## Submission
+
+Once you have completed the task, submit your changes by pushing to a new branch and creating a pull request. Include a detailed description of the changes you made and any additional improvements or features you implemented.
