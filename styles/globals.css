@@ -16,18 +16,20 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+#nprogress {
+  transform: scaleX(-1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999999;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+#nprogress .bar {
+  background: hsl(169 28% 36%);
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px hsl(169 28% 36%), 0 0 5px hsl(169 28% 36%) !important;
 }
