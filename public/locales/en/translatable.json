@@ -13,9 +13,17 @@
     "register": "registration"
   },
   "common": {
+    "home": "Home",
+    "comments": "Comments",
     "select_language": "Select language",
     "english": "English",
     "arabic": "Arabic",
-    "other-page": "Change Page"
+    "other-page": "Change Page",
+    "submitting": "Submitting"
+  },
+  "comments": {
+    "comment": "comment",
+    "comments": "comments {{total}}",
+    "submit_comment": "Submit Comment"
   }
 }

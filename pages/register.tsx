@@ -106,6 +106,12 @@ const Register: NextPage = ({ NEXTAUTH_URL }: InferGetServerSidePropsType<any>) 
     <>
       <div className="flex min-h-screen flex-col items-center justify-center bg-slate-50">
         <div className="w-full max-w-sm rounded-xl bg-white p-5 shadow-xl">
+          <Link
+            className="text-lg font-bold"
+            href="/"
+          >
+            {t("common:home")}
+          </Link>
           <div className="mb-2">
             <label className="block text-sm font-semibold leading-7">{t("common:select_language")}</label>
             <select
@@ -209,7 +215,7 @@ const Register: NextPage = ({ NEXTAUTH_URL }: InferGetServerSidePropsType<any>) 
                   disabled={isSubmitting}
                   className="rounded-full bg-blue-600 px-2.5 py-2 text-white transition hover:bg-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:ring-offset-1"
                 >
-                  {isSubmitting ? t("common:loading") : t("auth:register")}
+                  {isSubmitting ? t("common:submitting") : t("auth:register")}
                 </button>
               </div>
             </form>

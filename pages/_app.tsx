@@ -4,7 +4,7 @@ import { Provider as ReduxProvider } from "react-redux";
 import { appWithTranslation } from "next-i18next";
 import i18nextConfig from "@/next-i18next.config.js";
 import "nprogress/nprogress.css";
-import "@/styles/globals.css";
+import "@/styles/globals.scss";
 import { storeWrapper } from "@/store";
 import { AuthProvider } from "@/contextes";
 import { AppProvider } from "@/contextes/AppContext";

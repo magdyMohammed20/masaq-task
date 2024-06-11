@@ -58,6 +58,12 @@ const Login: NextPage = ({ NEXTAUTH_URL }: InferGetServerSidePropsType<any>) => 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-slate-50">
       <div className="w-full max-w-sm rounded-xl bg-white p-5 shadow-xl">
+        <Link
+          className="text-lg font-bold"
+          href="/"
+        >
+          {t("common:home")}
+        </Link>
         <div className="mb-2">
           <label className="block text-sm font-semibold leading-7">{t("common:select_language")}</label>
           <select

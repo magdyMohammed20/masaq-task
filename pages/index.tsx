@@ -33,7 +33,7 @@ export default function Home() {
         <Link href="/login">{t("auth:login")}</Link>
       )}
       <br />
-      <Link href="/other-page">{t("common:other-page")}</Link>
+      <Link href="/comments">{t("common:comments")}</Link>
     </main>
   );
 }

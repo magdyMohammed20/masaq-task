@@ -13,9 +13,17 @@
     "register": "تسجيل"
   },
   "common": {
+    "home": "الرئيسية",
+    "comments": "التعليقات",
     "select_language": "اختر اللغة",
     "english": "الإنجليزية",
     "arabic": "العربية",
-    "other-page": "تبديل الصفحة"
+    "other-page": "تبديل الصفحة",
+    "submitting": "جاري الإرسال..."
+  },
+  "comments": {
+    "comment": "تعليق",
+    "comments": "التعليقات {{total}}",
+    "submit_comment": "إرسال التعليق"
   }
 }

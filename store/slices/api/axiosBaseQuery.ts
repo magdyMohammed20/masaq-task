@@ -39,7 +39,7 @@ const axiosBaseQuery =
 
       return {
         error: {
-          message: err.message,
+          message: response?.data?.message ?? err.message,
           status: response?.status
         }
       };
