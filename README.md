@@ -85,13 +85,19 @@ npm run dev
 ### 7. Use TailwindCSS to code Pixel Perfect Design
 - Use Tailwind CSS to design [this page (with dark and light mode supported)](https://www.figma.com/design/QBoCj45HJYsWJ5PsC240VJ/SaaS-Landing-Page---Bento-UI-(Community)?node-id=22-218&m=dev) and apply a better design to the entire application UIs.
 
-### 8. SEO and MetaData
+### 8. Apply responsive design to the previous page (bonus task)
+
+### 9. SEO and MetaData
 - Ensure the application works perfectly with SEO.
 - Implement appropriate metadata for all pages to enhance SEO.
 
-### 9. Comments
+### 10. Comments
 - in the comments page you should apply pagination to the comments to replace Reduxjs Toolkit with whatever you feel right
-  
-## Submission
 
-Once you have completed the task, submit your changes by pushing to a new branch and creating a pull request. Include a detailed description of the changes you made and any additional improvements or features you implemented.
+### 11. Unit/E2E testing for your application
+
+### 12. Deployment (bonus task)
+- deploy your project to Vercel
+ 
+## Submission
+Once you have completed the task, submit your changes by pushing to a new branch and creating a pull request in your cloned repository. Include a detailed description of the changes you made and any additional improvements or features you implemented.
