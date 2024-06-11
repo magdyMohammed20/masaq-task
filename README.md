@@ -5,10 +5,14 @@ You will be working on migrating a Next.js application from the `pages` director
 
 ## Project features:
 `NextAuth.js` to handle authentication in a `Next.js` app.
+
 `i18next` to handle internationalization. 
+
 `NProgress` to show a progress bar at the top when a page changes.
-`redux` for state management
-`reduxjs/toolkit` for API caching and data fetching
+
+`redux` for state management.
+
+`reduxjs/toolkit` for API caching and data fetching.
 
 the application uses a fake API for login and registration: [DummyJSON Auth API](https://dummyjson.com/docs/auth#auth-login).
 
