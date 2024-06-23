@@ -83,7 +83,7 @@ npm run dev
 - Remove Redux and Reduxjs Toolkit from the application and use built-in solutions
 
 ### 7. Use TailwindCSS to code Pixel Perfect Design
-- Use Tailwind CSS to design [this page (with dark and light mode supported)]([https://www.figma.com/design/QBoCj45HJYsWJ5PsC240VJ/SaaS-Landing-Page---Bento-UI-(Community)?node-id=22-218&m=dev](https://www.figma.com/design/SKLhZXkR26pi9VzR8R8hKC/SaaS-Landing-Page---Bento-UI-(Community)-(Copy)?m=dev&node-id=0-1)) and apply a better design to the entire application UIs.
+- Use Tailwind CSS to design [this page (with dark and light mode supported)](https://www.figma.com/design/SKLhZXkR26pi9VzR8R8hKC/SaaS-Landing-Page---Bento-UI-(Community)-(Copy)?m=dev&node-id=0-1) and apply a better design to the entire application UIs.
 
 ### 8. Apply responsive design to the previous page (bonus task)
 
