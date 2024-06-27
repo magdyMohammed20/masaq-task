@@ -1,23 +1,15 @@
-import { useEffect, useState } from "react";
+"use client";
+
 import Link from "next/link";
-import { setCookie } from "cookies-next";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
-import { InferGetServerSidePropsType, NextPage } from "next";
+import toast from "react-hot-toast";
+import { addCookie } from "../../actions";
+import { addData } from "@/lib/fetch";
 
-import { signIn, useSession } from "next-auth/react";
-import { useRouter } from "next/router";
-import { toast } from "react-toastify";
-import { withCommonGetServerSideProps } from "@/utils/withCommonGetServerSideProps";
-import { useTranslation } from "next-i18next";
-
-export const getServerSideProps = withCommonGetServerSideProps(["auth", "common"]);
-const Login: NextPage = ({ NEXTAUTH_URL }: InferGetServerSidePropsType<any>) => {
-  const { t, i18n } = useTranslation();
-
+export default function LoginForm() {
   const router = useRouter();
-
-  const redirectUrl = (router.query.callbackUrl as string) || "/";
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState<Record<"username" | "password" | "global", string>>({
@@ -25,13 +17,6 @@ const Login: NextPage = ({ NEXTAUTH_URL }: InferGetServerSidePropsType<any>) => 
     password: "",
     global: ""
   });
-  const { status } = useSession();
-
-  useEffect(() => {
-    if (status === "authenticated") {
-      window.location.replace(redirectUrl.replace(NEXTAUTH_URL, ""));
-    }
-  }, [NEXTAUTH_URL, redirectUrl, status]);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -44,14 +29,20 @@ const Login: NextPage = ({ NEXTAUTH_URL }: InferGetServerSidePropsType<any>) => 
       return;
     }
 
-    const res = await signIn("credentials", {
-      redirect: false,
-      username,
-      password
+    const res = await addData({
+      url: "/auth/login",
+      body: {
+        username,
+        password
+      }
     });
 
-    if (res && !res.ok) {
-      toast.error(res.error);
+    if (res?.token) {
+      await addCookie("token", res.token);
+      toast.success("Login Successfully");
+      router.push("/");
+    } else {
+      toast.error(res?.message);
     }
   };
 
@@ -62,42 +53,42 @@ const Login: NextPage = ({ NEXTAUTH_URL }: InferGetServerSidePropsType<any>) => 
           className="text-lg font-bold"
           href="/"
         >
-          {t("common:home")}
+          home
         </Link>
         <div className="mb-2">
-          <label className="block text-sm font-semibold leading-7">{t("common:select_language")}</label>
+          <label className="block text-sm font-semibold leading-7">select_language</label>
           <select
-            value={i18n.language}
-            onChange={async (e) => {
-              const locale = e.target.value;
-              await i18n.changeLanguage(locale);
+            // value={i18n.language}
+            // onChange={async (e) => {
+            //   const locale = e.target.value;
+            //   await i18n.changeLanguage(locale);
 
-              document.documentElement.setAttribute("dir", i18n.language === "ar" ? "rtl" : "ltr");
-              document.documentElement.setAttribute("lang", i18n.language);
+            //   document.documentElement.setAttribute("dir", i18n.language === "ar" ? "rtl" : "ltr");
+            //   document.documentElement.setAttribute("lang", i18n.language);
 
-              setCookie("NEXT_LOCALE", i18n.language, {
-                path: "/",
-                sameSite: "strict",
-                secure: process.env.NODE_ENV === "production"
-              });
-            }}
+            //   setCookie("NEXT_LOCALE", i18n.language, {
+            //     path: "/",
+            //     sameSite: "strict",
+            //     secure: process.env.NODE_ENV === "production"
+            //   });
+            // }}
             className="w-full rounded-xl border-0 px-2.5 py-2 text-xs ring-1 ring-inset ring-slate-200 focus:outline-none focus:ring-blue-600"
           >
-            <option value="en">{t("common:english")}</option>
-            <option value="ar">{t("common:arabic")}</option>
+            <option value="en">english</option>
+            <option value="ar">arabic</option>
           </select>
         </div>
-        <h1 className="font-semibold tracking-normal">{t("auth:login_title")}</h1>
-        <p className="text-xs/4 font-light text-slate-500">{t("auth:login_description")}</p>
+        <h1 className="font-semibold tracking-normal">login_title</h1>
+        <p className="text-xs/4 font-light text-slate-500">login_description</p>
         <div className="pt-2">
           <form
             onSubmit={handleSubmit}
             className="space-y-2"
           >
             <div>
-              <label className="block text-xs font-medium leading-7">{t("auth:username")}</label>
+              <label className="block text-xs font-medium leading-7">username</label>
               <input
-                placeholder={t("auth:username") as string}
+                placeholder={"auth:username" as string}
                 type="text"
                 required
                 value={username}
@@ -107,9 +98,9 @@ const Login: NextPage = ({ NEXTAUTH_URL }: InferGetServerSidePropsType<any>) => 
               {errors.username && <p className="text-sm font-bold italic text-red-500">{errors.username}</p>}
             </div>
             <div>
-              <label className="block text-xs font-medium leading-7">{t("auth:password")}</label>
+              <label className="block text-xs font-medium leading-7">{"auth:password"}</label>
               <input
-                placeholder={t("auth:password") as string}
+                placeholder={"auth:password" as string}
                 type="password"
                 required
                 value={password}
@@ -124,13 +115,13 @@ const Login: NextPage = ({ NEXTAUTH_URL }: InferGetServerSidePropsType<any>) => 
                 href="/register"
                 className="rounded-xl px-2 py-1.5 ring-offset-1 hover:underline focus:outline-none focus:ring-1 focus:ring-blue-600"
               >
-                {t("auth:register")}
+                {"auth:register"}
               </Link>
               <button
                 type="submit"
                 className="rounded-full bg-blue-600 px-2.5 py-2 text-white transition hover:bg-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:ring-offset-1"
               >
-                {t("auth:login")}
+                {"auth:login"}
               </button>
             </div>
           </form>
@@ -138,6 +129,4 @@ const Login: NextPage = ({ NEXTAUTH_URL }: InferGetServerSidePropsType<any>) => 
       </div>
     </div>
   );
-};
-
-export default Login;
+}
