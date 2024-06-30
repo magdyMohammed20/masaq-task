@@ -12,8 +12,10 @@
     "lint:all": "npm run format && npm run types:check && npm run lint"
   },
   "dependencies": {
+    "apexcharts": "^3.49.2",
     "next": "13.4.3",
     "react": "18.2.0",
+    "react-apexcharts": "^1.4.1",
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.4.1"
   },

@@ -1,0 +1,29 @@
+.headerStyle {
+  @apply bg-dark transition-all  duration-300 ease-in-out;
+}
+.navContainer {
+  @apply container mx-auto flex items-center justify-between px-10 py-5;
+}
+
+.logo {
+  @apply flex items-center  gap-2 text-2xl font-bold tracking-wider;
+}
+
+.logoText {
+  @apply me-0.5 text-3xl text-indigo-500;
+}
+
+.ulList {
+  @apply hidden items-center gap-4 sm:flex;
+}
+.navLink {
+  @apply text-[18px] font-[400] tracking-wide text-graycustom  opacity-[.7] transition-all duration-75 ease-in-out hover:opacity-[1];
+}
+
+.navBtn {
+  @apply rounded-[64px] border border-gray-600 bg-darklight px-6 py-4   text-[16px] text-white opacity-0 transition-all duration-75 ease-in-out focus:ring focus:ring-indigo-500 lg:opacity-100;
+}
+
+.link {
+  @apply block px-3 py-4 transition-colors  duration-200 ease-in-out md:border-0 md:dark:hover:bg-transparent;
+}
